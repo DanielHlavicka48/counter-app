@@ -17,4 +17,5 @@
   <p >{{counterName || "noname"}}</p>
   <ion-input [(ngModel)]="counterName" placeholder="název počítadla"></ion-input>
   <ion-button (click)="increment()">+</ion-button> <ion-button (click)="decrement()" [disabled]="count === 0">-</ion-button><ion-button (click)="reset()">reset</ion-button>
+  <ion-button  (click)="saveCounter()">Save</ion-button>
 </ion-content>
