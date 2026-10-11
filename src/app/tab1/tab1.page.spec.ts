@@ -15,4 +15,31 @@ describe('Tab1Page', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should increment the counter', () => {
+    component.increment();
+
+    expect(component.count).toBe(1);
+  });
+
+  it('should increment the counter by 3', () => {
+    component.increment();
+    component.increment();
+    component.increment();
+
+    expect(component.count).toBe(3);
+  });
+
+  it('should reset the counter and update the template', () => {
+    component.count = 5;
+    component.reset();
+    fixture.detectChanges();
+
+    const value = fixture.nativeElement.querySelector(
+      '.counter-value',
+    ) as HTMLElement;
+
+    expect(component.count).toBe(0);
+    expect(value.textContent?.trim()).toBe('0');
+  });
 });
